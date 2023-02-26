@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "__putchar.c"
 
 /**
  * print_alphabet - Check description
@@ -7,8 +7,9 @@
  */
 void print_alphabet(void)
 {
-char i;
+	char i;
 
-for (i = 'a'; i <= 'z'; i++) printf ("%c",i);
-printf("\n");
+	for (i = 'a'; i <= 'z'; i++)
+		_putchar(i);
+	_putchar('\n');
 }
