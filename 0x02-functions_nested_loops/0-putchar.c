@@ -1,3 +1,4 @@
+/* a program that prints _putchar */
 #include <stdio.h>
 
 /**
