@@ -1,32 +1,44 @@
-#include <stdio.h>
+#include "holberton.h"
+
 /**
- * main - Entry point
- *
- * Description: program that finds and prints the first 98 Fibonacci
- *              numbers, starting with 1 and 2
- *
- * Return: Always 0 successful
+ * print_times_table - Prints the times table of the input,
+ *                     starting with 0.
+ * @n: The value of the times table to be printed.
  */
-int main(void)
+void print_times_table(int n)
 {
-        unsigned long int t0 = 0, t1 = 1, s;
+	int num, mult, prod;
 
-        int i;
+	if (n >= 0 && n <= 15)
+	{
+		for (num = 0; num <= n; num++)
+		{
+			_putchar('0');
 
-        for (i = 1; i<= 98; i++)
-        {
-                s = t0 + t1;
+			for (mult = 1; mult <= n; mult++)
+			{
+				_putchar(',');
+				_putchar(' ');
 
-                if (i != 98)
-                {
-                        printf("%lu, ", s);
-                }
-                else
-                {
-                        printf("%lu\n", s);
-                }
-                t0 = t1;
-                t1 = s;
-        }
-        return (0);
+				prod = num * mult;
+
+				if (prod <= 99)
+					_putchar(' ');
+				if (prod <= 9)
+					_putchar(' ');
+
+				if (prod >= 100)
+				{
+					_putchar((prod / 100) + '0');
+					_putchar(((prod / 10)) % 10 + '0');
+				}
+				else if (prod <= 99 && prod >= 10)
+				{
+					_putchar((prod / 10) + '0');
+				}
+				_putchar((prod % 10) + '0');
+			}
+			_putchar('\n');
+		}
+	}
 }
