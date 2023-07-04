@@ -1,14 +1,19 @@
-/* a program that prints _putchar */
-#include <stdio.h>
+#include "main.h"
 
 /**
- * return 0
- * inputs void
- * prints _putchar
+ * main - This program prints the phrase Hello, World
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-printf("_putchar\n");
-/* return 0 */
-return (0);
+	char ch[] = "Holberton";
+	int i;
+
+	for (i = 0; ch[i] != '\0'; i++)
+	{
+		_putchar(ch[i]);
+	}
+
+	_putchar('\n');
+	return (0);
 }
